@@ -1,222 +1,181 @@
+**Prototype youtube link :**   https://youtu.be/vSmYL7FWncI
 
 
+# 🚀 Future Flow (AI-Powered Roadmap & Career Path Generator)
 
-
-# Future Flow ( AI-Powered Roadmap & Career Path Generator )
-
-Transforming career guidance from generic advice to **dynamic, personalized, AI-driven roadmaps** with curated resources and structured learning plans.
+Transforming career guidance from **generic advice** to **dynamic, personalized, AI-driven learning roadmaps** with curated resources and structured weekly learning plans.
 
 ---
 
 ## 🧠 Problem Statement
 
-Students often face two major challenges in career planning:
+Students often face two major challenges in their learning journey:
 
-1. **Choosing the Right Career Path**
-  - With hundreds of options post-10th, 12th, or higher education, students struggle to identify which careers align with their interests, skills, and education background.
-   
-2. **Planning the Path to Reach Their Goal**
-  - Once a career is chosen, learners lack clear guidance on the skills to acquire, the sequence of learning, projects to build, and the best resources available online.
-  - Most current solutions provide only static lists, scattered advice, or generic recommendations, leaving students overwhelmed and unfocused.
+1. **Lack of Personalized Guidance**  
+   Most platforms provide static lists or one-size-fits-all content. Learners struggle to know what to study next or how to structure their progress.
 
-**Our solution:** A multi-agent AI system that generates **career mindmaps**, personalized learning roadmaps, and curates resources across the internet to guide students from **career selection → skill mastery → goal achievement**.
+2. **Resource Overload Without Structure**  
+   Countless tutorials exist online, but students often feel overwhelmed about which ones to follow or in what order.
+
+Our system solves this by creating **AI-powered personalized roadmaps** that guide learners step-by-step from fundamentals to mastery, supported by curated online resources and adaptive feedback.
 
 ---
 
 ## 💡 Solution Overview
 
-Transform your learning journey with AI-generated, personalized roadmaps. Master any skill with step-by-step guidance, curated resources, and progress tracking.
-### 1️⃣ Career Path Explorer (Mindmap Generator)
+Transform your learning experience with AI-generated roadmaps that are **personalized**, **adaptive**, and **resource-rich**.
 
-- Input: Student's current education level (10th, 12th, Diploma, B.Tech, M.Tech, etc.)
-- AI generates **career mindmaps** showing all possible career trajectories for that education level.
-- Students can select a desired career role from the visual map.
-- Example: 12th PCM → Engineering → Computer Science → Data Scientist / Software Engineer / Cloud Architect
+### 🧭 Core Features
 
----
+#### 1️⃣ AI-Powered Roadmap Generation
+- **Personalized Learning Paths** — Tailored to your current skill level, available time, and learning style.  
+- **Smart Resource Discovery** — Automatically curates top YouTube tutorials, articles, and documentation.  
+- **Adaptive Difficulty** — Gradually increases complexity as you progress.
 
-### 2️⃣ Roadmap & Course Planner
+#### 2️⃣ Progress Tracking & Analytics
+- **Visual Progress Indicators** — Track completion across weekly milestones.  
+- **Milestone Celebrations** — Get achievements and learning badges.  
+- **Learning Analytics** — Understand your learning patterns and growth rate.
 
-🤖 AI-Powered Roadmap Generation
-Personalized Learning Paths: Custom 4-week roadmaps tailored to your skill level, time availability, and learning style
-Smart Resource Discovery: Automatically curated YouTube tutorials, articles, and documentation
-Adaptive Difficulty: Progressive learning structure that adapts to your experience level
+#### 3️⃣ Community Features (Pro)
+- **Public Roadmap Sharing** — Share your learning journeys with peers.  
+- **Discover Learning Paths** — Get inspired by community-shared roadmaps.  
+- **Collaborative Learning** — Discuss, compare, and co-learn with others.
 
-📊 Progress Tracking & Analytics
-Visual Progress Indicators: Track completion across weeks and individual tasks
-Milestone Celebrations: Built-in checkpoints and achievement system
-Learning Analytics: Insights into your learning patterns and progress
-
-👥 Community Features (Pro)
-Public Roadmap Sharing: Share your roadmaps with the community
-Discover Learning Paths: Browse and get inspired by others' roadmaps
-Collaborative Learning: Learn from proven learning strategies
-
-💎 Subscription Management
-Freemium Model: 1 free roadmap per month, upgrade for unlimited access
-Razorpay Integration: Secure payments for Indian users (₹79/month)
-Usage Analytics: Track API usage and subscription limits
+#### 4️⃣ Subscription Management
+- **Freemium Model** — 1 free roadmap/month; upgrade for unlimited access.  
+- **Razorpay Integration** — Secure payments (₹79/month).  
+- **Usage Analytics** — Track API calls and subscription limits.
 
 ---
 
-### 🔄 Process Pipeline
+## 🔄 Process Pipeline
 
-1. **Career Mindmap Generation**
-  - Student selects education level
-  - LLM generates visual career paths with multiple options
+1. **User Input**
+   - Education background, skill level, and learning goals.
 
-2. **Career Selection**
-  - Student chooses a desired career role
+2. **Profiling Agent**
+   - Analyzes user background and identifies learning gaps.
 
-3. **Profiling Agent**
-  - Assesses student background, skill gaps, and learning style
+3. **Roadmap Generator Agent**
+   - Builds a structured weekly learning roadmap.
 
-4. **Roadmap Generation**
-  - Multi-agent system creates step-by-step personalized roadmap
+4. **Resource Aggregation**
+   - Web scraping + RAG (Retrieval-Augmented Generation) approach curates the best YouTube, GitHub, Coursera, and blog content.  
+   - Data stored in **ChromaDB / FAISS** for fast retrieval.
 
-5. **Resource Aggregation**
-  - Web scraping + RAG approach stores the best online resources in a vector database
+5. **Curriculum Planner**
+   - Converts the roadmap into a **weekly study plan** with projects, checklists, and progress tracking.
 
-6. **Curriculum Planner Agent**
-  - Converts roadmap and resources into weekly study plans, project trackers, and skill checklists
-
-7. **Final Output**
-  - Downloadable PDF roadmap
-  - Mindmap visualization
-  - Personalized study schedule
-  - Resource library
-  - Optional interactive Q&A via chatbot
+6. **Final Output**
+   - ✅ Downloadable PDF Roadmap  
+   - ✅ Resource Library  
+   - ✅ Interactive Q&A Chatbot  
 
 ---
 
 ## 🧠 Architecture Diagram
 
-              ┌─────────────────────────┐
-              │   User Input (Profile)  │
-              │ - Education Level       │
-              │ - Background / Skills   │
-              └───────────┬────────────┘
+```
+          ┌─────────────────────────┐
+          │   User Input (Profile)  │
+          │ - Education Level       │
+          │ - Background / Skills   │
+          └───────────┬────────────┘
                       │
                       ▼
-           ┌────────────────────────────┐
-           │ Career Mindmap Generator   │
-           │ (LLM + Visualization)     │
-           └───────────┬────────────────┘
+         ┌────────────────────────────┐
+         │   Profiling Agent          │
+         │ - Skill Gap Analysis       │
+         │ - Learning Style           │
+         └───────────┬───────────────┘
                       │
                       ▼
-             ┌───────────────────────┐
-             │ User Career Selection │
-             └───────────┬───────────┘
-                     │
-                     ▼
-             ┌───────────────────────┐
-             │   Profiling Agent      │
-             │ - Skill Gap Analysis   │
-             │ - Learning Style       │
-             └───────────┬───────────┘
-                     │
-                     ▼
-           ┌────────────────────────────┐
-           │ Roadmap Generator Agent     │
-           │ - Stepwise Learning Plan    │
-           │ - Fundamentals → Projects  │
-           └───────────┬────────────────┘
-                     │
-                     ▼
-      ┌────────────────────────────────────────┐
-      │ Resource Scraper Agent + Vector DB      │
-      │ - YouTube / Coursera / Udemy / GitHub  │
-      │ - Blogs, cheat sheets, roadmap.sh      │
-      │ - Stored in ChromaDB / FAISS           │
-      └───────────┬────────────────────────────┘
-              │
-              ▼
-        ┌─────────────────────┐
-        │ Curriculum Planner  │
-        │ - Weekly Study Plan │
-        │ - Project Tracker   │
-        │ - Skill Checklists  │
-        └───────────┬─────────┘
-                │
-                ▼
-        ┌───────────────────────────┐
-        │      Final Output          │
-        │ - PDF Roadmap             │
-        │ - Mindmap Visualization   │
-        │ - Interactive Chatbot     │
-        │ - Resource Library        │
-        └───────────────────────────┘
-
+       ┌───────────────────────────────┐
+       │ Roadmap Generator Agent       │
+       │ - Stepwise Learning Plan      │
+       │ - Fundamentals → Projects     │
+       └───────────┬──────────────────┘
+                      │
+                      ▼
+  ┌────────────────────────────────────────┐
+  │ Resource Scraper Agent + Vector DB      │
+  │ - YouTube / Coursera / GitHub          │
+  │ - Blogs, Cheatsheets, Roadmap.sh       │
+  │ - Stored in ChromaDB / FAISS           │
+  └───────────┬────────────────────────────┘
+                      │
+                      ▼
+        ┌─────────────────────────────┐
+        │ Curriculum Planner Agent     │
+        │ - Weekly Study Plan          │
+        │ - Project Tracker            │
+        │ - Skill Checklists           │
+        └───────────┬─────────────────┘
+                      │
+                      ▼
+        ┌────────────────────────────┐
+        │ Final Output                │
+        │ - PDF Roadmap               │
+        │ - Interactive Chatbot       │
+        │ - Resource Library          │
+        └────────────────────────────┘
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Component                  | Technology / Tool                  |
-|-----------------------------|-----------------------------------|
-| LLM Reasoning               | GPT-5 / Claude / Gemini           |
-| Agents Framework            | LangChain Multi-Agent / CrewAI    |
-| Embeddings                  | `text-embedding-3-small`          |
-| Database                    | SupaBase                          |
-| Web Scraping                | requests / BeautifulSoup4 / serpapi |
-| Backend (optional)          | FastAPI                            |
-| Visualization               | Plotly / NetworkX / Graphviz       |
+| Component | Technology / Tool |
+|------------|------------------|
+| **LLM Reasoning** | GPT-5 / Claude / Gemini |
+| **Database** | Supabase |
+| **Vector Store** | Supabase buckets |
+| **Web Scraping** | Requests / BeautifulSoup4 / SerpAPI |
+| **Backend** | deno environment(supabase serverless backend) |
+| **Frontend** | React + Tailwind + Shadcn UI |
 
 ---
 
 ## 🌟 Key Features
 
-- **Multi-Agent Architecture:** Profiling, roadmap generation, resource scraping, and curriculum planning
-- **Career Mindmaps:** Visual paths for any education level
-- **Personalized Roadmaps:** Step-by-step plan tailored to skill gaps and learning style
-- **Resource Aggregation:** Curated, verified online resources
-- **Interactive Q&A (Optional):** Chatbot interface for career or topic queries
-- **Downloadable Outputs:** PDFs, trackers, mindmaps, and study plans
+- ✅ Multi-Agent Architecture  
+- ✅ Personalized Roadmap Generator  
+- ✅ Resource Aggregation using RAG  
+- ✅ Adaptive Difficulty Levels  
+- ✅ Interactive Chatbot  
+- ✅ Downloadable PDFs & Trackers  
 
 ---
 
-## 🎥 Demo Flow 
-1. Select education level → Generate career mindmap
-2. Choose desired career role
-3. Show AI profiling and skill gap analysis
-4. Generate roadmap + weekly study plan
-5. Display curated resources
-6. Optional: Ask chatbot career or skill-related questions
+## 🔧 Configuration
+
+### Environment Variables
+
+| Variable | Description | Required |
+|-----------|-------------|-----------|
+| `VITE_SUPABASE_URL` | Supabase project URL | ✅ |
+| `VITE_SUPABASE_ANON_KEY` | Supabase anonymous key | ✅ |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key | ✅ |
+| `GEMINI_API_KEY` | Google Gemini API key | ✅ |
+| `YOUTUBE_API_KEY` | YouTube Data API v3 key | ✅ |
+| `RAZORPAY_KEY_ID` | Razorpay key ID | Optional |
+| `RAZORPAY_KEY_SECRET` | Razorpay secret key | Optional |
 
 ---
 
-```
+## 💰 API Rate Limits
 
-🔧 Configuration
-Environment Variables
-Variable	Description	Required
-VITE_SUPABASE_URL	Supabase project URL	Yes
-VITE_SUPABASE_ANON_KEY	Supabase anonymous key	Yes
-SUPABASE_SERVICE_ROLE_KEY	Supabase service role key	Yes
-GEMINI_API_KEY	Google Gemini API key	Yes
-YOUTUBE_API_KEY	YouTube Data API v3 key	Yes
-RAZORPAY_KEY_ID	Razorpay key ID	Optional
-RAZORPAY_KEY_SECRET	Razorpay secret key	Optional
+| Service | Free Tier | Pro Tier |
+|----------|------------|----------|
+| Roadmap Generation | 1/month | Unlimited |
+| YouTube Searches | 20/month | Unlimited |
 
-API Rate Limits
-Service	Free Tier	Pro Tier
-Roadmap Generation	1/month	Unlimited
-YouTube Searches	20/month	Unlimited
+---
 
-🎨 Customization
-Theming
-The app uses Tailwind CSS with custom design tokens. Modify colors in:
+---
 
-`src/index.css` - CSS custom properties
-`tailwind.config.ts` - Tailwind theme extension
+## ⚙️ Planned But Unimplemented
 
-Adding New Components
-```bash
-# Add a new Shadcn/ui component
-npx shadcn-ui@latest add [component-name]
-```
-
-Google Gemini for AI-powered roadmap generation
-YouTube Data API for video resource discovery
-Razorpay for seamless payment processing 
-
+We had initially planned to integrate a **Career Path Explorer (Mindmap Generator)** that visually displayed multiple career trajectories based on user education levels.  
+However, due to **time constraints**, this feature was not implemented in the current version and is reserved for a future release.
