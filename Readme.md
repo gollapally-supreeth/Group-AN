@@ -2,7 +2,7 @@
 
 
 
-# Future Flow ( AI-Powered Career Path & Roadmap Generator )
+# Future Flow ( AI-Powered Roadmap & Career Path Generator )
 
 Transforming career guidance from generic advice to **dynamic, personalized, AI-driven roadmaps** with curated resources and structured learning plans.
 
